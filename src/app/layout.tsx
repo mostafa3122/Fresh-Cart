@@ -1,6 +1,11 @@
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+import Navbar from "./_components/Navbar/Navbar";
 import "./globals.css";
+import MySessionProvider from "./_components/MySessionProvider/MySessionProvider";
+import { CartContextProvider } from "./context/cartItemContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +32,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <MySessionProvider>
+          <CartContextProvider>
+            <Navbar />
+            <main className="pt-24">{children}</main>
+          </CartContextProvider>
+          <Toaster position="top-center" />
+        </MySessionProvider>
       </body>
     </html>
   );
