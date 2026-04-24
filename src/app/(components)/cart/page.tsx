@@ -19,8 +19,6 @@ function Cart() {
   // clear cart
   async function clearAllCart() {
     const res = await ClearCart();
-    console.log(res);
-
     if (res.message == "success") {
       getCartData();
       toast.success("Your cart cleared successfully.......", {
@@ -70,7 +68,7 @@ function Cart() {
   // cart data
   async function getCartData() {
     try {
-      let response = await getLoggedUserCart();
+      const response = await getLoggedUserCart();
       setCartId(response.cartId);
       console.log(response);
       

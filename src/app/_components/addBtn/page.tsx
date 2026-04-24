@@ -7,7 +7,7 @@ function AddBtn({ id }: { id: string }) {
 
   const {setDataDetails} = useContext(cartItemContext)
   async function addProductToCart() {
-    let res = await AddToCart(id);
+    const res = await AddToCart(id);
     if (res.status == "success") {
       setDataDetails(res.numOfCartItems)
       toast.success("product add to cart successfully.......", {

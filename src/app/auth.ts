@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
         password: {},
       },
       authorize: async (credentials) => {
-        let response = await fetch(
+        const response = await fetch(
           `${process.env.API}/api/v1/auth/signin`,
           {
             method: "POST",
@@ -24,7 +24,7 @@ export const authOptions: NextAuthOptions = {
             headers: { "content-type": "application/json" },
           }
         );
-        let payload = await response.json();
+        const payload = await response.json();
        
 
         const decode: { id: string } = jwtDecode(payload.token);

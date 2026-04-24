@@ -22,7 +22,7 @@ import { toast } from "sonner";
 import { signIn } from "next-auth/react";
 
 function SignIn() {
-  let router = useRouter();
+  const router = useRouter();
   const form = useForm({
     defaultValues: {
       email: "",
@@ -92,7 +92,7 @@ function SignIn() {
     // }
 
     // try {
-    //   let response = await axios.post(
+    //   const response = await axios.post(
     //     "https://ecommerce.routemisr.com/api/v1/auth/signin",
     //     value
     //   );

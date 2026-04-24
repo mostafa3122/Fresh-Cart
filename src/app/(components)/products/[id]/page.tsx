@@ -3,9 +3,9 @@ import AddBtn from "@/app/_components/addBtn/page";
 import Image from "next/image";
 
 async function productDetails({ params }: { params: { id: string } }) {
-  let { id } = await params;
+  const { id } = await params;
 
-  let data = await ProductDetails(id);
+  const data = await ProductDetails(id);
 
   return (
     // <div className="container my-10 w-[90%] mx-auto">

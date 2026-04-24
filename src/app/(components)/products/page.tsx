@@ -3,7 +3,7 @@ import ProdctDetails from "@/app/_components/productCard/page";
 import { Iproduct } from "@/app/interface/productInterface";
 
 async function Products() {
-  let { data } = await getAllProducts();
+  const { data } = await getAllProducts();
  
   return (
     <div className="container px-4 mx-auto my-10">

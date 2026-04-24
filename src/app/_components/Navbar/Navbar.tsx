@@ -7,7 +7,7 @@ import { signOut, useSession } from "next-auth/react";
 import { cartItemContext } from "@/app/context/cartItemContext";
 
 export default function Navbar() {
-  let { data: session } = useSession();
+  const { data: session } = useSession();
 
   const { dataDetails } = useContext(cartItemContext);
 

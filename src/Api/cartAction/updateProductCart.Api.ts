@@ -17,7 +17,7 @@ async function UpdateProductCart(id: string, countNumber: number) {
         body: JSON.stringify(payload),
       }
     );
-    let data = await response.json();
+    const data = await response.json();
     return data; // return data to caller
   }
 }

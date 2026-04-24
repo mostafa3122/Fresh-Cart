@@ -2,7 +2,7 @@ import getAllCategories from "@/Api/category.Api";
 import CategorySlider from "../CategorySlider/CategorySlider";
 
 async function AllCategories() {
-  let data = await getAllCategories();
+  const data = await getAllCategories();
 
   return (
     <>

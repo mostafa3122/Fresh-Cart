@@ -23,7 +23,7 @@ import { toast } from "sonner";
 import Link from "next/link";
 
 function SignUp() {
-  let router = useRouter();
+  const router = useRouter();
   const form = useForm({
     defaultValues: {
       name: "",
@@ -40,7 +40,7 @@ function SignUp() {
 
   async function handleRegister(value: any) {
     try {
-      let response = await axios.post(
+      const response = await axios.post(
         "https://ecommerce.routemisr.com/api/v1/auth/signup",
         value
       );
